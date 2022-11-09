@@ -9,8 +9,6 @@ public class SlidingWindow {
     // Given an array of integers n and an integer k,
     // Find the maximum sum of any SUBARRAY of size k
 
-    //LEET CODE NB 1
-
     public static int getMaxSum(int[] arr, int k){
 
         int maxSum = Integer.MIN_VALUE;
@@ -87,6 +85,7 @@ public class SlidingWindow {
 
     }
 
+    //ANOTHER SOLUTION
     public static int maxSubArray2(int[] nums) {
 
         int highSum = Integer.MIN_VALUE;

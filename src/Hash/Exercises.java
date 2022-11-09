@@ -11,10 +11,6 @@ public class Exercises {
         System.out.print(twoSum(new int[]{2,7,11,15}, 9));
 
 
-
-
-
-
     }
 
     //1 TWO SUM
