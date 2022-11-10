@@ -64,7 +64,7 @@ public class LinkedlList {
 
     public int  size(){
         Node curr = this.head;
-        int index = 0;
+        int index = 1;
 
         if (head==null) return 0;
 
@@ -73,6 +73,42 @@ public class LinkedlList {
             index++;
         }
         return index;
+    }
+
+    public String toString(){
+        Node curr = this.head;
+
+        StringBuilder sb = new StringBuilder();
+
+        if (head==null) return "Empty linked list";
+
+        sb.append("Head : " + this.head.data);
+        sb.append(" Values: ");
+        while(curr.next != null){
+            curr = curr.next;
+            sb.append(" "+ curr.data);
+        }
+
+        return sb.toString();
+
+    }
+
+    public static void main (String[] args){
+
+        LinkedlList linkedlList = new LinkedlList();
+
+        linkedlList.addEnd(10);
+        linkedlList.addEnd(20);
+        linkedlList.addEnd(30);
+
+        System.out.println(linkedlList.size());
+        System.out.println(linkedlList);
+
+        linkedlList.addBeginning(100);
+        System.out.println(linkedlList);
+
+        linkedlList.add(50, 3);
+        System.out.println(linkedlList);
     }
 
 }
