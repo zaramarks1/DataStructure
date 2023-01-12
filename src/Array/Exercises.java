@@ -25,6 +25,28 @@ public class Exercises {
 
     }
 
+    // 26. Remove Duplicates from Sorted Array
+
+    //Runtime
+    //1 ms
+
+    //Memory
+    //43.6 MB
+
+    public int removeDuplicates(int[] nums) {
+
+        int fowardIndex = 1;
+
+        for(int i = 0; i != nums.length-1; i ++){
+
+            if(nums[i]< nums[i+1]){
+                nums[fowardIndex++] = nums[i+1];
+
+            }
+        }
+        return fowardIndex;
+    }
+
     public static void main(String args[]) {
 
     System.out.println(dailyTemperatures(new int []{73,74,75,71,69,72,76,73}));
