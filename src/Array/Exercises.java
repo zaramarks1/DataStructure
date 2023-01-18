@@ -128,6 +128,8 @@ public class Exercises {
     }
 
     // TODO 66. Plus One
+
+    //https://leetcode.com/problems/plus-one/description/
     public int[] plusOne(int[] digits) {
 
         int digitLength = digits.length;
@@ -160,9 +162,24 @@ public class Exercises {
             }
         }
         return sum;
+    }
+    // SECOND SOLUTION = BETTER
+    public int[] plusOne2(int[] digits) {
 
+        int digitLength = digits.length;
 
+        for(int i = digitLength-1; i >= 0; i--){
+            digits[i]+=1;
 
+            if(digits[i] <= 9) return digits;
+
+            digits[i] = 0;
+        }
+
+        int[] newDigits = new int[digitLength+1];
+        newDigits[0] = 1;
+
+        return newDigits;
     }
 
     public static void main(String args[]) {

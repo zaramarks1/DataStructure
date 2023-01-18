@@ -177,6 +177,7 @@ public class SlidingWindow {
         while(indexPlace >= 0 && m!= 0 && n!=0){
 
             if(index2 < 0 ) break;
+
             if(index1 < 0 ) {
                 while(index2 >=0)nums1[indexPlace--] = nums2[index2--];
                 break;

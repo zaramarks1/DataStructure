@@ -1,41 +1,6 @@
-package Array;
+package Array.string;
 
-public class TwoPointers {
-
-    // TODO 977. Squares of a Sorted Array
-//    Given an integer array nums sorted in non-decreasing order,
-//    return an array of the squares of each number sorted in non-decreasing order.
-
-//    Runtime
-//1 ms 100%
-
-//    Memory
-//43.8 MB 86.94%
-
-    public int[] sortedSquares(int[] nums) {
-
-        int numsLength = nums.length;
-        int[] sortedNums = new int[numsLength];
-
-        if(nums[0] >= 0 ) for(int i = 0; i < numsLength; i++) sortedNums[i] = nums[i] *nums[i];
-        else{
-            int pointerLeft = 0;
-            int pointerRight = numsLength-1;
-            for (int i = numsLength-1; i >= 0; i--){
-
-                if(Math.abs(nums[pointerLeft]) > Math.abs(nums[pointerRight] ) ){
-                    sortedNums[i] = nums[pointerLeft]*nums[pointerLeft];
-                    pointerLeft++;
-                }else{
-                    sortedNums[i] = nums[pointerRight]*nums[pointerRight];
-                    pointerRight--;
-                }
-            }
-
-        }
-        return sortedNums;
-
-    }
+public class Exercises {
 
     // TODO 344. Reverse String
     // Beat 99.14% Runtime
@@ -44,17 +9,17 @@ public class TwoPointers {
     public void reverseString(char[] s) {
 
         int low = 0;
-        int high = s.length - 1;
+        int high = s.length-1;
         char temp = ' ';
 
-        while (high > low) {
+        while( high > low){
             temp = s[low];
             s[low++] = s[high];
             s[high--] = temp;
         }
 
-
     }
+
     //TODO 541. Reverse String II
     //https://leetcode.com/problems/reverse-string-ii/description/
     //SOLUTION 1 - KINDA SLOW
@@ -77,7 +42,6 @@ public class TwoPointers {
         }
 
         return sb.toString();
-
     }
     //SOLUTION 2
     // 1MS
@@ -103,5 +67,4 @@ public class TwoPointers {
         return new String(charArray);
 
     }
-
 }
