@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.awt.*;
+
 public class LinkedlList {
 
     class Node{
@@ -93,6 +95,24 @@ public class LinkedlList {
 
     }
 
+    public void reverse(Node head){
+
+        Node curr = this.head;
+        Node prev = null;
+        Node next;
+
+        while(curr!=null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        this.head = prev;
+
+    }
+
+
+
     public static void main (String[] args){
 
         LinkedlList linkedlList = new LinkedlList();
@@ -101,14 +121,17 @@ public class LinkedlList {
         linkedlList.addEnd(20);
         linkedlList.addEnd(30);
 
-        System.out.println(linkedlList.size());
+        linkedlList.reverse(linkedlList.head);
         System.out.println(linkedlList);
 
-        linkedlList.addBeginning(100);
-        System.out.println(linkedlList);
-
-        linkedlList.add(50, 3);
-        System.out.println(linkedlList);
+//        System.out.println(linkedlList.size());
+//        System.out.println(linkedlList);
+//
+//        linkedlList.addBeginning(100);
+//        System.out.println(linkedlList);
+//
+        //linkedlList.add(50, 3);
+        //System.out.println(linkedlList);
     }
 
 }
