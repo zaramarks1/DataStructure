@@ -4,6 +4,13 @@ import java.util.HashSet;
 
 public class Exercises {
 
+    // IMPORTANT
+    // NUMBER OF COLUMNS matrix[0].length
+    // NUMBER OF ROWS matrix.length
+
+    //ROW SIZE = NUMBER OF COLUMNS = matrix[0].length
+    // COLUMN SIZE = NUMBER OF ROWS = matrix.length
+
     //36. Valid Sudoku
 
     //Runtime 15ms (beats 32%
@@ -70,7 +77,38 @@ public class Exercises {
         return -1;
     }
 
-    // TODO 240. Search a 2D Matrix II
+    // TODO 74. Search a 2D Matrix (MEDIUM)
+    // Using binary search
+    // Runtime 0ms beats 100%
+    // Memory 42mb beats 56%
+
+    public boolean searchMatrix74(int[][] matrix, int target) {
+
+        if (matrix == null) return false;
+
+        // size of the matrix if it were an array
+        int end = matrix.length * matrix[0].length -1;
+        int start = 0;
+        //nb of columns
+        int colQt = matrix[0].length;
+
+        while(start <= end){
+            //Divide the fake array in two
+            int middle =  end + start /2;
+
+            // now with the middle value we can convert into the index of the matrix
+            int value = matrix[middle/colQt][middle%colQt];
+
+            if(value == target) return true;
+
+            if(value > target) end = middle-1;
+            else start = middle+1;
+        }
+        return false;
+
+    }
+
+    // TODO 240. Search a 2D Matrix II (MEDIUM)
     // https://leetcode.com/problems/search-a-2d-matrix-ii/description/
     // Slow solution using divide and conquer
     // Runtime 19ms beats 7%
