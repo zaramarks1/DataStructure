@@ -1,4 +1,4 @@
-package LinkedList;
+package DataTypes.LinkedList;
 
 import java.util.HashSet;
 
@@ -130,8 +130,8 @@ public class ExerciseLinkedList {
 
         // TODO 143 Reorder List
         //https://leetcode.com/problems/reorder-list/description/
-        // Runtime 1ms
-        // Memory beats 45%
+        // Runtime 1ms BEATS 100%
+        // Memory beats 50%
 
         public void reorderList(ListNode head) {
 

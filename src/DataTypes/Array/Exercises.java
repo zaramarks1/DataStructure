@@ -1,4 +1,4 @@
-package Array;
+package DataTypes.Array;
 
 import java.util.Arrays;
 
@@ -27,7 +27,7 @@ public class Exercises {
 
     }
 
-    // TODO 26. Remove Duplicates from Sorted Array
+    // TODO 26. Remove Duplicates from Sorted DataTypes.Array
 
     //Runtime
     //1 ms
@@ -48,7 +48,7 @@ public class Exercises {
         return fowardIndex;
     }
 
-//    TODO 561. Array Partition
+//    TODO 561. DataTypes.Array Partition
 
 //    Given an integer array nums of 2n integers, group these integers into
 //    n pairs (a1, b1), (a2, b2), ..., (an, bn) such that the sum of min(ai, bi) for all i is maximized.

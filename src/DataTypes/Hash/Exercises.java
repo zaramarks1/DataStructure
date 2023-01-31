@@ -1,4 +1,4 @@
-package Hash;
+package DataTypes.Hash;
 
 import java.util.HashMap;
 import java.util.Map;

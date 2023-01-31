@@ -1,6 +1,4 @@
-package LinkedList;
-
-import java.awt.*;
+package DataTypes.LinkedList;
 
 public class LinkedlList {
 
