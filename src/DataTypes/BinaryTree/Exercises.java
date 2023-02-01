@@ -36,5 +36,32 @@ public class Exercises {
 
     }
 
+    // TODO 101. Symmetric Tree (easy)
+    // https://leetcode.com/problems/symmetric-tree/description/
+    //Runtime 0ms beats 100%
+    //Memory 40mb beats 98%
+
+    public boolean isSymmetric(TreeNode root) {
+
+        if(root == null) return false;
+        return checkSymmetric(root.left, root.right);
+
+    }
+
+    //IN ORDER TRAVERSAL
+    public boolean checkSymmetric(TreeNode left, TreeNode right){
+
+        if(left == null && right == null) return true;
+        if(left==null || right == null) return false;
+
+        if(left.val != right.val) return false;
+
+        boolean out = checkSymmetric(left.left, right.right);
+        boolean in = checkSymmetric(left.right, right.left);
+
+        return out && in;
+
+    }
+
 
 }

@@ -1,13 +1,0 @@
-
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(®³Õ“ýÿÿÿÿ
-Z
-java:S1854"8Remove this useless assignment to local variable "temp".(Ú¬áøÿÿÿÿ8¹­¨‹Ü0
-T
-java:S1135"2Complete the task associated to this TODO comment.(ÂÃ˜Üùÿÿÿÿ8Ÿå¨‹Ü0
-T
-java:S1135"2Complete the task associated to this TODO comment.(ãÃÀ¦úÿÿÿÿ8‚ßËŽÜ0
->
-java:S1659"!Declare "low" on a separate line.(¢¦³“8‚ßËŽÜ0
-]	java:S125""<This block of commented-out lines of code should be removed.(Ä•Ÿâúÿÿÿÿ8ƒßËŽÜ0
->
-java:S16593"!Declare "low" on a separate line.(¢¦³“8„ßËŽÜ0
