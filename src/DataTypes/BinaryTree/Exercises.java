@@ -63,5 +63,31 @@ public class Exercises {
 
     }
 
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+
+        if(root == null) return false;
+
+        return checkPath(root, 0, targetSum);
+
+    }
+
+    // TODO 112. Path Sum EASY
+    //https://leetcode.com/problems/path-sum/description/
+    // Runtime 0ms beats 100%
+    // Mmeory 91mb beats 97%
+    public boolean checkPath(TreeNode root, int value, int targetSum){
+        if(root == null)  return false;
+
+        value+=root.val;
+        if(root.left == null && root.right == null) return value==targetSum;
+
+        // boolean left = checkPath(root.left, value, targetSum);
+        // boolean right = checkPath(root.right, value, targetSum);
+
+        return  checkPath(root.left, value, targetSum) || checkPath(root.right, value, targetSum);
+
+
+    }
+
 
 }
