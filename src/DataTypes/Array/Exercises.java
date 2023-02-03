@@ -182,6 +182,24 @@ public class Exercises {
         return newDigits;
     }
 
+    // TODO 136. Single Number EASY
+    // https://leetcode.com/problems/single-number/description/
+    // Runtime 1ms beats 100%
+    // Memory 42mb beats 94%
+
+    public int singleNumber(int[] nums) {
+
+        if(nums.length == 1) return nums[0];
+
+        int last = 0;
+        for(int n : nums){
+            last ^=n; // Use bits XOR : If same values are added, it cancels them out
+        }
+
+        return last;
+
+    }
+
     public static void main(String args[]) {
 
     System.out.println(dailyTemperatures(new int []{73,74,75,71,69,72,76,73}));
