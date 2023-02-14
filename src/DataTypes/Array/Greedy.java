@@ -29,6 +29,30 @@ public class Greedy {
         return maxJump >= nums.length-1;
     }
 
+    // TODO 45. Jump Game II (MEDIUM)
+    //https://leetcode.com/problems/jump-game-ii/description/
+    // Runtime 1ms beats 99%
+    // Memory 42mb beats 75%
+
+    public int jump(int[] nums) {
+
+        int count =0;
+        int maxJump = 0;
+        int currJump =0;
+
+        for (int i = 0; i < nums.length-1; i ++){
+
+            maxJump = Math.max(maxJump, i + nums[i]); //getting the maximum jump at every point
+
+            if(i == currJump){ // if we reach the current jump
+                count++; //add to the counter
+                currJump = maxJump; //update the currJump to maximum jump (can be the currJump or whatever value in between)
+            }
+        }
+        return count;
+    }
+
+
     // TODO 860. Lemonade Change easy
     // https://leetcode.com/problems/lemonade-change/description/
     // Runtime 2ms beats 80 %
@@ -84,4 +108,57 @@ public class Greedy {
         return counter;
 
     }
+
+    // TODO 134. Gas Station MEDIUM
+    // https://leetcode.com/problems/gas-station/description/
+    // Runtime 2ms beats 67%
+    // memory 62 beats 86%
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+
+        int startPoint = 0; //find the start point if there is
+        int leftBound = 0;  //bounds between startPoint
+        int rightBound = 0;
+
+        for(int i = 0; i <gas.length; i ++){
+
+            rightBound+=gas[i] - cost[i];
+
+            if(rightBound < 0 ){ //if our right bound is negative it means our startPoint will not be able to advance
+                leftBound += rightBound; //we put everything in the left bound
+                rightBound = 0; //reset the right bound
+                startPoint = i + 1; // push our startPoint to the next value
+            }
+        }
+
+        if(leftBound + rightBound < 0) return -1;
+        return startPoint;
+    }
+
+    // TODO 376. Wiggle Subsequence MEDIUM
+    // https://leetcode.com/problems/wiggle-subsequence/description/
+    // Runtime 0ms beats 100%
+    // memory 439 beats 98%
+    public int wiggleMaxLength(int[] nums) {
+
+        if(nums.length == 1) return 1;
+
+        int count = nums.length;
+        int prev = 0;
+
+        for (int i = 1; i < nums.length; i ++){
+
+            int diff = nums[i]-nums[i-1];
+
+            if(diff == 0 ) {count--;continue;}
+
+            else if(prev < 0 && diff <= 0 || prev > 0 && diff >= 0 ) {
+                count--;
+            }
+            prev = diff;
+        }
+
+        return count;
+
+    }
+
 }

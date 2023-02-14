@@ -13,3 +13,9 @@ W
 'src/DataTypes/Stacks/ExercisesEasy.java,e/a/ea995cda1370da0d4a5e4733d846572dd127cabc
 N
 src/SortingAlgo/MergeSort.java,5/a/5af481c08991a08b1bf63b1659aeaa8026c9a984
+W
+'src/DataTypes/BinaryTree/Exercises.java,c/c/cc6b8ee67cd75e1eca21c92c7c79a51afa473860
+S
+#src/DataTypes/Matrix/Exercises.java,0/1/01b8ad9d8ccfd6aa3cb017cc69e11e487aba9124
+Y
+)src/DataTypes/Array/string/Exercises.java,3/f/3fe2220204b8cea2bb173402e7c77269ae1cfdcf
