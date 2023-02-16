@@ -1,5 +1,8 @@
 package DataTypes.String;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Exercises {
 
     // TODO 387. First Unique Character in a DataTypes.String
@@ -106,5 +109,59 @@ public class Exercises {
         }
         return s.substring(lowS, lowS+maxVal+1);
 
+    }
+
+    // TODO 205. Isomorphic Strings EASY
+    //https://leetcode.com/problems/isomorphic-strings/description/
+    //Runtime 3ms beats 98%
+    // Memory 41mb beats 91%
+
+    public boolean isIsomorphic(String s, String t) {
+
+        if(s.length()!=t.length()) return false;
+
+        int[] ascii = new int[256];
+
+        Set<Integer> set = new HashSet<>();
+
+        for(int i = 0; i < s.length(); i ++){
+
+            int sChar = s.charAt(i);
+
+            int tChar = t.charAt(i);
+
+            if(ascii[sChar] == 0) {
+                if(set.contains(tChar))return false;
+                ascii[sChar] = tChar+1;
+                set.add(tChar);
+            }
+
+            if(tChar!= ascii[sChar] -1)return false;
+        }
+
+        return true;
+    }
+
+    /*    TODO 392. Is Subsequence EASY
+    https://leetcode.com/problems/is-subsequence/description/
+    Runtime 0ms beats 100%
+    Memory 40mb beats 62%*/
+
+    public boolean isSubsequence(String s, String t) {
+
+        int sLength = s.length();
+        int tLength = t.length();
+
+        if(sLength > tLength) return false;
+
+        int sPointer = 0;
+        int tPointer =0;
+
+        while(sPointer < sLength && tPointer < tLength){
+
+            if(s.charAt(sPointer)== t.charAt(tPointer)) sPointer++;
+            tPointer++;
+        }
+        return sPointer > sLength-1;
     }
 }
