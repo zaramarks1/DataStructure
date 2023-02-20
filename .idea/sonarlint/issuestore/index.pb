@@ -3,8 +3,6 @@ G
 src/PascalTriangle.java,3/c/3c5646fef969fde05fff30b2262c2d215d661c8b
 B
 src/Fibonacci.java,e/4/e4ca206f303f834f297ba289333914a272fe3780
-Y
-)src/DataTypes/LinkedList/LinkedlList.java,6/3/6308b1b217b688daa0a9e0b9c6284fe0c922f6fc
 N
 src/SortingAlgo/QuickSort.java,5/8/58d4d1269b444cc4089fd5d0dc09fa4304cbaef2
 X
@@ -19,3 +17,5 @@ $src/DataTypes/Array/TwoPointers.java,8/b/8b085038265ab968a87f52f320faa3c13a262
 +src/DataTypes/BinaryTree/BST_Exersices.java,6/1/61ea5e598890739ea589da2aa3a09ab3e70ccdcf
 `
 0src/DataTypes/BinaryTree/BreadthFirstSearch.java,5/f/5f1f812644e1b147e46f7990ffa865c15666fb45
+O
+src/DataTypes/Array/Greedy.java,c/8/c896669154da8badbd202064fa4ee9b7c7dfb595

@@ -269,6 +269,29 @@ public class ExerciseLinkedList {
 
         }
 
+    /*    TODO 876. Middle of the Linked List EASY
+        https://leetcode.com/problems/middle-of-the-linked-list/description/
+        Runtime -0ms beats 100%
+        Memory 39mb beats 96%*/
+
+        public ListNode middleNode(ListNode head) {
+
+            if(head == null) return null;
+
+            ListNode slow = head;
+            ListNode fast = head.next;
+
+            while(fast != null && fast.next!= null){
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            if(fast!=null) return slow.next;
+
+            return slow;
+
+        }
+
 
         public static void main(String[] args) {
 
