@@ -103,5 +103,35 @@ public class TwoPointers {
         return new String(charArray);
 
     }
+    /* TODO 11. Container With Most Water
+    https://leetcode.com/problems/container-with-most-water/description/
+    Runtime 2ms beats 99%
+    Memory 52 beats 94%
+    */
+    public int maxArea(int[] height) {
+
+        int maxContainer = Integer.MIN_VALUE;
+
+        int lowP = 0;
+        int highP = height.length -1;
+
+        while(lowP < highP){
+
+            int heightPos =  Math.min(height[lowP], height[highP]);
+
+            int currWater = heightPos * (highP - lowP);
+            maxContainer = Math.max(maxContainer, currWater);
+
+            while(lowP < height.length &&  lowP < highP && height[lowP] <= heightPos)++lowP;
+            while(highP >= 0 && lowP < highP && height[highP] <= heightPos )--highP;
+
+            // if(height[lowP] < height[highP]){
+            //     lowP++;
+            // }else highP--;
+
+        }
+        return maxContainer;
+
+    }
 
 }

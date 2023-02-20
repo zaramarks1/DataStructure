@@ -140,7 +140,6 @@ public class ExerciseLinkedList {
             ListNode slow=head; ListNode fast=head;
 
             if (head.next != null) {
-
                 while(fast!=null && fast.next!=null){
                     slow = slow.next;
                     fast = fast.next.next;
@@ -279,19 +278,15 @@ public class ExerciseLinkedList {
             if(head == null) return null;
 
             ListNode slow = head;
-            ListNode fast = head.next;
+            ListNode fast = head;
 
             while(fast != null && fast.next!= null){
                 slow = slow.next;
                 fast = fast.next.next;
             }
-
-            if(fast!=null) return slow.next;
-
             return slow;
 
         }
-
 
         public static void main(String[] args) {
 

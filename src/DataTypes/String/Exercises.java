@@ -164,4 +164,33 @@ public class Exercises {
         }
         return sPointer > sLength-1;
     }
+
+    /* TODO 409. Longest Palindrome EASY
+       https://leetcode.com/problems/longest-palindrome/description/
+       Rutime  1ms beats 100%
+       Memory 40mb beats 92%
+     */
+    public int longestPalindrome2(String s) {
+
+        int[] alphabet = new int[58];
+        int count = 0;
+        int rest =0;
+
+        for(char c : s.toCharArray()){
+
+            int index = (int)c - 'A';
+
+            if( alphabet[index] + 1 == 2){
+                count+=2;
+                rest--;
+                alphabet[index] = 0;
+            }else{
+                alphabet[index]++;
+                rest++;
+            }
+        }
+
+        return rest > 0 ? count+1 : count;
+
+    }
 }

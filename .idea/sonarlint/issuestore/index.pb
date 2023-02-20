@@ -11,11 +11,5 @@ N
 src/SortingAlgo/MergeSort.java,5/a/5af481c08991a08b1bf63b1659aeaa8026c9a984
 Y
 )src/DataTypes/Array/string/Exercises.java,3/f/3fe2220204b8cea2bb173402e7c77269ae1cfdcf
-T
-$src/DataTypes/Array/TwoPointers.java,8/b/8b085038265ab968a87f52f320faa3c13a262b8e
-[
-+src/DataTypes/BinaryTree/BST_Exersices.java,6/1/61ea5e598890739ea589da2aa3a09ab3e70ccdcf
-`
-0src/DataTypes/BinaryTree/BreadthFirstSearch.java,5/f/5f1f812644e1b147e46f7990ffa865c15666fb45
 O
 src/DataTypes/Array/Greedy.java,c/8/c896669154da8badbd202064fa4ee9b7c7dfb595
