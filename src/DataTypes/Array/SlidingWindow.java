@@ -258,6 +258,35 @@ public class SlidingWindow {
 
     }
 
+    // TODO 278. First Bad Version EASY
+    // https://leetcode.com/problems/first-bad-version/description/
+    // Runtime 17ms beats 62%
+    // Memory 40mb beats 10%
+
+    public int firstBadVersion(int n) {
+        int low = 1;
+        int high = n;
+
+        boolean reversed = false;
+
+        while(high > low){
+
+            int middle =  low+(high-low)/2;
+
+            if(isBadVersion(middle)) high = middle;
+            else {
+                low = middle+1;
+            }
+        }
+        return low;
+    }
+
+    public boolean isBadVersion(int n){
+        return false;
+    }
+
+
+
     public static void main(String args[]){
 
         //System.out.print(getMaxSum(new int[]{1,2,3,4,5,6,2}, 3));
