@@ -238,6 +238,26 @@ public class SlidingWindow {
         return min;
     }
 
+    // TODO 704. Binary Search EASY
+    // https://leetcode.com/problems/binary-search/description/
+    // Runtime 0ms beats 100%
+    // memory 54mb beats 5%
+
+    public int search(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length-1;
+
+        while(high >= low){
+            int middle =  (high + low)/2;
+            if(nums[middle] > target) high = middle -1;
+            else if (nums[middle] < target) low = middle+1;
+            else return middle;
+        }
+
+        return -1;
+
+    }
+
     public static void main(String args[]){
 
         //System.out.print(getMaxSum(new int[]{1,2,3,4,5,6,2}, 3));
