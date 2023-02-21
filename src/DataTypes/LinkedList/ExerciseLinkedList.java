@@ -288,6 +288,56 @@ public class ExerciseLinkedList {
 
         }
 
+        // TODO 160. Intersection of Two Linked Lists EASY
+        //https://leetcode.com/problems/intersection-of-two-linked-lists/description/
+        // runtine 1ms beats 98%
+        // Memory 55.9 MB beats 5%
+        public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+
+            int sizeA = length(headA);
+            int sizeB = length(headB);
+
+            if(sizeA > sizeB)  {headA = ajust(headA, sizeA-sizeB);}
+            else if(sizeA < sizeB){headB = ajust(headB, sizeB-sizeA);}
+
+            if(headA == headB) return headA;
+
+            while(headA != headB){
+
+                headA = headA.next;
+                headB = headB.next;
+            }
+            return headA;
+
+        }
+
+        public int length(ListNode head){
+            ListNode fast = head;
+            ListNode slow = head;
+
+            int size = 1;
+
+            while(fast!=null && fast.next!=null){
+                fast = fast.next.next;
+                slow = slow.next;
+                size+=2;
+            }
+
+            if(fast == null) size--;
+            return size;
+
+        }
+
+        public ListNode ajust(ListNode head, int diff){
+
+            while(diff>0){
+                head = head.next;
+                diff--;
+            }
+
+            return head;
+        }
+
         public static void main(String[] args) {
 
         }
