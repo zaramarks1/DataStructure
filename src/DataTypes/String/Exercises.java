@@ -193,4 +193,53 @@ public class Exercises {
         return rest > 0 ? count+1 : count;
 
     }
+
+    // TODO 6. Zigzag Conversion MEDIUM
+    // https://leetcode.com/problems/zigzag-conversion/description/
+    // Runtime 13ms beats 40%
+    // Memory 54mb beats 5%
+
+    public String convert(String s, int numRows) {
+
+        if(numRows == 1 || s.length() < numRows)return s;
+
+        StringBuilder[] sbs = new StringBuilder[numRows];
+
+        //int zigzag = numRows-2;
+        int row = 0;
+        int sLength = s.length();
+        int increment = 1;
+
+        for(int i = 0; i <sLength; i ++){
+
+            if (sbs[row] == null) sbs[row] = new StringBuilder();
+
+            sbs[row].append(s.charAt(i));
+
+            if(row==0){increment=1;}
+            if(row==numRows-1){increment=-1;}
+            row+=increment;
+
+            //row++;
+            // if(row == numRows){
+            //     row = numRows - 1;
+            //     while(row > 1 && i < sLength-1){
+            //         //i++;
+            //         sbs[--row].append(String.valueOf(s.charAt(++i)));
+            //         //if(row==0)row++;
+            //     }
+            //     row=0;
+            // }
+        }
+
+        StringBuilder result = new StringBuilder(sLength);
+
+        for(StringBuilder sb : sbs){
+            result.append(sb.toString());
+        }
+
+        return result.toString();
+    }
+
+
 }
