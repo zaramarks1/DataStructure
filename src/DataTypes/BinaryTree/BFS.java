@@ -5,7 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BreadthFirstSearch {
+public class BFS {
+
+    //
+    // https://leetcode.com/tag/breadth-first-search/
 
     // TODO 102. Binary Tree Level Order Traversal (MEDIUM)
     //https://leetcode.com/problems/binary-tree-level-order-traversal/description/
@@ -81,5 +84,37 @@ public class BreadthFirstSearch {
 
         return list;
 
+    }
+
+
+    // TODO 116. Populating Next Right Pointers in Each Node MEDIUM
+    // Runtime 0ms beats 100%
+    // 42mb  Memory beats 78%
+    //O(n) - O(1)
+    public TreeNode.Node connect(TreeNode.Node root) {
+
+        // Keep track of the left node (1st is head )
+        TreeNode.Node leftRoot = root;
+
+        while(leftRoot!=null){
+            //We get our curr and put the next pointers on their childs (L and R)
+            TreeNode.Node curr = leftRoot;
+
+            while(curr!=null){
+                //if curr.left is null is the end, if not, we can point it to the right
+                if(curr.left!=null) curr.left.next = curr.right;
+
+                // This is the tricky part :
+                // The right node will connect to the left node but of another parent (curr.next)
+                //So we check if curr.next exists. If exists, that means we can connect the right to the left
+                // If not, then we are at the extreme right so the curr.right.next should keep pointing null
+                if(curr.right!= null && curr.next!=null) curr.right.next = curr.next.left;
+                curr = curr.next;
+            }
+
+            leftRoot = leftRoot.left;
+        }
+
+        return root;
     }
 }
