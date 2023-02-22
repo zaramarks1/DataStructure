@@ -134,4 +134,42 @@ public class TwoPointers {
 
     }
 
+    // TODO 540. Single Element in a Sorted Array MEDIUM
+    //https://leetcode.com/problems/single-element-in-a-sorted-array/description/
+    // Runtime 0ms beats 100%
+    //Memory 60.6 Mb Beats 6.74%
+
+    public int singleNonDuplicate(int[] nums) {
+
+        if(nums.length == 1) return nums[0];
+
+        int low = 0;
+        int high = nums.length-1;
+        //int middle = 0;
+
+        if(nums[low] != nums[low+1]) return nums[low];
+
+        if(nums[high]!= nums[high-1]) return nums[high];
+
+        while(low <= high){
+
+            int middle = low + (high-low) / 2;
+
+            if(nums[middle-1] != nums[middle] && nums[middle+1] != nums[middle]) return nums[middle];
+
+            if(middle % 2 == 0){
+
+                if(nums[middle+1] == nums[middle]) low = middle+1;
+                else high = middle -1;
+
+            }else{
+                if(nums[middle+1] != nums[middle]) low = middle+1;
+                else high = middle -1;
+            }
+        }
+
+        return nums[low];
+
+    }
+
 }
