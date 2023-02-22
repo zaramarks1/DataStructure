@@ -98,4 +98,33 @@ public class MinMaxDP {
 
         return maxSize*maxSize;
     }
+
+    // TODO 279. Perfect Squares MEDIUM
+    //https://leetcode.com/problems/perfect-squares/description/
+    // Runtime 38mb beats 64%
+    // Memory 44mb beats 16%
+
+    // Time complexity: O(N * sqrt(N))
+    // Space complexity: O(N)
+    public int numSquares(int n) {
+
+        if(n < 4) return n;
+
+        int[] dp = new int[n+1];
+
+        dp[0] = 0; // default value
+
+        for(int i = 1; i <= n ; i ++){
+            dp[i] = i;
+
+            for(int j = 1; j*j<= i ; j ++){
+
+                int sqr = j*j;
+
+                dp[i] = Math.min(dp[i], dp[i - sqr] + 1);
+            }
+        }
+        return dp[n];
+
+    }
 }
