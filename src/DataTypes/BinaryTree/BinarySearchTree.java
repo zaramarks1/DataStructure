@@ -22,6 +22,18 @@ public class BinarySearchTree {
         return left;
     }
 
+    // This solution takes under consideration that the Tree is a BST
+    public TreeNode searchBST2(TreeNode root, int val) {
+
+        if(root == null) return root;
+        if(root.val == val){
+            return root;
+        }
+        else{
+            return val<root.val? searchBST(root.left,val):searchBST(root.right,val);
+        }
+    }
+
     // TODO 98. Validate Binary Search Tree (MEDIUM)
     //https://leetcode.com/problems/validate-binary-search-tree/description/
     // Runtime 0ms beats 100%
@@ -45,7 +57,7 @@ public class BinarySearchTree {
         return left && right;
     }
 
-    // 173. Binary Search Tree Iterator (MEDIUM)
+    // TODO 173. Binary Search Tree Iterator (MEDIUM)
     // https://leetcode.com/problems/binary-search-tree-iterator/description/
     // Runtime 17ms beats 51%
     // MEMORY 52mb BEATS 6%
@@ -80,5 +92,21 @@ public class BinarySearchTree {
                 node = node.left;
             }
         }
+    }
+
+    // TODO 701. Insert into a Binary Search Tree (MEDIUM)
+    // Runtime 0ms beats 100%
+    // Memory 53mb beats 11%
+
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+
+        if(root == null) return new TreeNode(val);
+
+        if(val < root.val ) root.left = insertIntoBST(root.left, val);
+
+        else root.right = insertIntoBST(root.right, val);
+
+        return root;
+
     }
 }
