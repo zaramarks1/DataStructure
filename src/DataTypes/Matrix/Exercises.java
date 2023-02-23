@@ -203,6 +203,40 @@ public class Exercises {
 
     }
 
+    // TODO 200. Number of Islands MEDIUM
+    // https://leetcode.com/problems/number-of-islands/description/?envType=study-plan&id=level-1
+    // Runtime 3ms beats 88%
+    // Memory 56mb beats 15%
+
+    public int numIslands(char[][] grid) {
+
+        int nbIsland = 0;
+
+        for(int i = 0; i < grid.length; i ++){
+            for(int j = 0; j < grid[0].length; j ++){
+
+                if(grid[i][j] == '1'){
+                    findIsland(grid, i, j);
+                    nbIsland++;
+                }
+            }
+        }
+        return nbIsland;
+
+    }
+
+    public void findIsland(char[][] grid, int row, int col){
+
+        if(row < 0 || col < 0 || row >= grid.length || col >= grid[0].length || grid[row][col] == '0') return;
+
+        grid[row][col] = '0';
+
+        findIsland(grid, row+1, col);
+        findIsland(grid, row, col+1);
+        findIsland(grid, row-1, col);
+        findIsland(grid, row, col-1);
+    }
+
 
 
 
