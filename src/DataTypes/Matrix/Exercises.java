@@ -175,6 +175,35 @@ public class Exercises {
         return false;
     }
 
+    //DFS
+
+    // TODO 733. Flood Fill EASY
+    // https://leetcode.com/problems/flood-fill/?envType=study-plan&id=level-1
+    // Runtime 0ms beats 100%
+    // Mmeory 49mb beats 6%
+
+    public int[][] floodFill(int[][] image, int sr, int sc, int color) {
+
+        if(image[sr][sc] == color) return image;
+        paint(image, sr, sc, image[sr][sc], color);
+        return image;
+
+    }
+
+    public void paint(int[][] image, int sr, int sc, int color, int newColor){
+
+        if(sr < 0 || sc < 0 || sr >= image.length || sc >= image[0].length || image[sr][sc] != color) return;
+
+        image[sr][sc] = newColor;
+
+        paint(image, sr -1, sc, color, newColor);
+        paint(image, sr, sc-1, color, newColor);
+        paint(image, sr +1, sc, color, newColor);
+        paint(image, sr, sc+1, color, newColor);
+
+    }
+
+
 
 
 }
