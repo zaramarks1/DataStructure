@@ -109,4 +109,37 @@ public class BinarySearchTree {
         return root;
 
     }
+
+    // TODO 450. Delete Node in a BST MEDIUM
+    // https://leetcode.com/problems/delete-node-in-a-bst/description/
+    // Runtimme 0ms 100%
+    // Memory 42mb 59%
+
+    public TreeNode deleteNode(TreeNode root, int key) {
+
+        if(root == null) return root;
+
+        if(root.val == key){
+
+            if(root.left == null) {
+                return root.right;
+            }
+
+            if(root.right == null){
+                return root.left;
+            }
+
+            TreeNode curr = root.right;
+            while(curr.left !=null){
+                curr = curr.left;
+            }
+            root.val = curr.val;
+            root.right = deleteNode(root.right, curr.val);
+        }
+
+        if(key > root.val) root.right = deleteNode(root.right, key);
+        else root.left = deleteNode(root.left, key);
+
+        return root;
+    }
 }
