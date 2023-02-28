@@ -1,6 +1,8 @@
 package DataTypes.String;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Exercises {
@@ -239,6 +241,46 @@ public class Exercises {
         }
 
         return result.toString();
+    }
+
+    // TODO 438. Find All Anagrams in a String (MEDIUM)
+    //https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
+    // Runtime 7ms beats 80%
+    // Memory 43mb beats 50%
+
+    public List<Integer> findAnagrams(String s, String p) {
+
+        int[] alphabet = new int[26];
+
+        List<Integer> indexAnagram = new ArrayList<>();
+
+        for(int i = 0; i < p.length(); i ++) alphabet[p.charAt(i) - 'a']++;
+
+        int start = 0;int end = 0;
+
+        while (end < s.length()){
+
+            int sIndex = s.charAt(end) - 'a';
+
+            if(alphabet[sIndex] > 0) { // the value is in out anagram
+                alphabet[sIndex]--;
+
+                if(end-start+1 == p.length()){ // if index of end-start+1 == p.length we found an anagram
+                    indexAnagram.add(start);
+                    alphabet[s.charAt(start) - 'a']++;
+                    start++;
+                }
+                end++;
+            }else if (start == end) { // end is not in s and we moved up the max we can
+                start++;
+                end++;
+                continue;
+            }else{ // we move start while we still can
+                alphabet[s.charAt(start) - 'a']++;
+                start++;
+            }
+        }
+        return indexAnagram;
     }
 
 

@@ -13,3 +13,13 @@ Y
 )src/DataTypes/Array/string/Exercises.java,3/f/3fe2220204b8cea2bb173402e7c77269ae1cfdcf
 O
 src/DataTypes/Array/Greedy.java,c/8/c896669154da8badbd202064fa4ee9b7c7dfb595
+W
+'src/DataTypes/Stacks/ExercisesEasy.java,e/a/ea995cda1370da0d4a5e4733d846572dd127cabc
+Q
+!src/DataTypes/Hash/Exercises.java,f/9/f9767b55f695c93d6172afb1d8b6adab66c89d33
+S
+#src/Recursion/DivideAndConquer.java,8/a/8abb00f071abb037a86d39c4ad07d39a9114e28a
+V
+&src/DataTypes/Array/SlidingWindow.java,9/a/9a5377b530c5edeece9fa799dfefd6a530a5cc8c
+`
+0src/DataTypes/LinkedList/ExerciseLinkedList.java,b/e/be013668c68b554f398d4e42c9eac9f219abb8e2
