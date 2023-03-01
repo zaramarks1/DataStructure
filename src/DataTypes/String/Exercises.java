@@ -248,6 +248,8 @@ public class Exercises {
     // Runtime 7ms beats 80%
     // Memory 43mb beats 50%
 
+    // Sliding window
+
     public List<Integer> findAnagrams(String s, String p) {
 
         int[] alphabet = new int[26];
@@ -281,6 +283,39 @@ public class Exercises {
             }
         }
         return indexAnagram;
+    }
+
+    // TODO 424. Longest Repeating Character Replacement MEDIUM
+    // https://leetcode.com/problems/longest-repeating-character-replacement/description/
+    // Runtime 8 ms Beats 61.37%
+    // Memory 42.2 MB Beats 62.50%
+
+    public int characterReplacement(String s, int k) {
+
+        if(k>= s.length()-1) return s.length();
+
+        int start = 0;
+
+        int maxLength = 0;
+        int maxLetterCount = 0;
+
+        int[] alphabet = new int[26];
+
+        for(int end = 0;end < s.length(); end++){
+
+            int c = ++alphabet[s.charAt(end) - 'A'];
+
+            maxLetterCount = Math.max(maxLetterCount, c);
+
+            if(end - start + 1 > maxLetterCount+k){
+                alphabet[s.charAt(start++) - 'A']--;
+                //start++;
+            }
+
+            maxLength = Math.max(maxLength, end - start +1);
+        }
+
+        return maxLength;
     }
 
 
