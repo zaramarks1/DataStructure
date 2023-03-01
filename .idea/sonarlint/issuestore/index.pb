@@ -13,8 +13,6 @@ Y
 )src/DataTypes/Array/string/Exercises.java,3/f/3fe2220204b8cea2bb173402e7c77269ae1cfdcf
 O
 src/DataTypes/Array/Greedy.java,c/8/c896669154da8badbd202064fa4ee9b7c7dfb595
-W
-'src/DataTypes/Stacks/ExercisesEasy.java,e/a/ea995cda1370da0d4a5e4733d846572dd127cabc
 S
 #src/Recursion/DivideAndConquer.java,8/a/8abb00f071abb037a86d39c4ad07d39a9114e28a
 V

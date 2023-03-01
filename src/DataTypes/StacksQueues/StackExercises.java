@@ -1,8 +1,8 @@
-package DataTypes.Stacks;
+package DataTypes.StacksQueues;
 
 import java.util.Stack;
 
-public class ExercisesEasy {
+public class StackExercises {
 
     // TODO 20. Valid Parentheses
     //https://leetcode.com/problems/valid-parentheses/description/

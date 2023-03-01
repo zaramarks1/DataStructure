@@ -1,8 +1,0 @@
-
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í‹ë
-k
-java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(û›şöıÿÿÿÿ
-r
-java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(û›şöıÿÿÿÿ8‚†ĞêÜ0
-M
-java:S1135"2Complete the task associated to this TODO comment.(¡ºËÏøÿÿÿÿ
