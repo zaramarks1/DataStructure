@@ -159,4 +159,25 @@ public class MinMaxDP {
         return min;
 
     }
+
+    // TODO 322. Coin Change MEDIUM
+    //https://leetcode.com/problems/coin-change/description/
+    //Runtime 19 ms Beats 56.99%
+    // Memory 42.6 MB Beats 36.90%
+
+    public int coinChange(int[] coins, int amount) {
+
+        int[] dp = new int[amount+1];
+
+        for(int i = 1; i < amount + 1; i ++){
+
+            dp[i] = Integer.MAX_VALUE;
+
+            for(int c : coins){
+                if(i - c >= 0 && dp[i-c] < Integer.MAX_VALUE) dp[i] = Math.min(dp[i], dp[i-c] + 1);
+            }
+        }
+
+        return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
+    }
 }
