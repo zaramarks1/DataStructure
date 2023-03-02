@@ -1,6 +1,8 @@
 package DP;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class MinMaxDP {
 
@@ -167,17 +169,54 @@ public class MinMaxDP {
 
     public int coinChange(int[] coins, int amount) {
 
-        int[] dp = new int[amount+1];
+        int[] dp = new int[amount+1]; // we are gonna store the count of coins we need to archieve each value 0...amount
 
         for(int i = 1; i < amount + 1; i ++){
 
-            dp[i] = Integer.MAX_VALUE;
+            dp[i] = Integer.MAX_VALUE; //lets define a max value
 
-            for(int c : coins){
-                if(i - c >= 0 && dp[i-c] < Integer.MAX_VALUE) dp[i] = Math.min(dp[i], dp[i-c] + 1);
+            for(int c : coins){ // for each coin
+
+                if(i - c >= 0 && dp[i-c] < Integer.MAX_VALUE) { // If i - c > 0 (so we dont get a negative index) and our count exists
+                    dp[i] = Math.min(dp[i], dp[i-c] + 1); //  minimum between the value we have rn or - the coin + 1
+                }
             }
         }
 
         return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
+    }
+
+    // TODO 983. Minimum Cost For Tickets MEDIUM
+    //https://leetcode.com/problems/minimum-cost-for-tickets/description/
+    //Runtime 2 ms Beats 47.80%
+    // Memory 41.9 MB Beats 25.88%
+
+    public int mincostTickets(int[] days, int[] costs) {
+
+        Set<Integer> set = new HashSet<>();
+
+        int lastDay = 0;
+
+        for(int day : days){ // adding days to a set
+            set.add(day);
+            lastDay = Math.max(lastDay, day); // in case the days array is not sorted
+        }
+
+        int[] dp = new int[lastDay+1];
+
+        for(int i = 1; i < lastDay + 1 ; i++){
+
+            if(!set.contains(i)) { // if its not in the set, we dont consider the day
+                dp[i] = dp[i-1]; // just copy the cost from previous
+                continue;
+            }
+
+            dp[i] = dp[i-1] + costs[0]; // default value is cost of day 1
+            dp[i] = Math.min(dp[i], dp[Math.max(i-7 ,0)] + costs[1]); // cost for 7-day
+            dp[i] = Math.min(dp[i], dp[Math.max(i-30 ,0)] + costs[2]); //cost for 30-day
+
+        }
+        return dp[lastDay];
+
     }
 }
