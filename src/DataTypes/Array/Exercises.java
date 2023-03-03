@@ -200,6 +200,27 @@ public class Exercises {
 
     }
 
+    // TODO 169. Majority Element EASY
+    // https://leetcode.com/problems/majority-element/description/
+    // Runtime 1 ms Beats 99.93%
+    // Memory 46.1 MB Beats 58.63%
+    public int majorityElement(int[] nums) {
+        int maxCountNb = 0;
+        int nb =nums[0];
+        for(int n : nums){
+
+            if(n == nb) maxCountNb ++;
+            else maxCountNb--;
+
+            if(maxCountNb <= 0){
+                nb = n;
+                maxCountNb = 1;
+            }
+        }
+        return nb;
+
+    }
+
     public static void main(String args[]) {
 
     System.out.println(dailyTemperatures(new int []{73,74,75,71,69,72,76,73}));
