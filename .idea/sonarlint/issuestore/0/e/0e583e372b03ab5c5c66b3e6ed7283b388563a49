@@ -1,0 +1,37 @@
+
+m	java:S127c"XRefactor the code in order to not assign to this loop counter from within the loop body.(ôöïš
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ùƒîùÿÿÿÿ
+H
+java:S1135
+"2Complete the task associated to this TODO comment.(ÊÂÌÓ
+V	java:S125"<This block of commented-out lines of code should be removed.(‡àÃİøÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ÅãŠñùÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(è‡Ó¤úÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(¯ôû
+V	java:S125"<This block of commented-out lines of code should be removed.(ƒ¯Äªüÿÿÿÿ
+Q	java:S125!"<This block of commented-out lines of code should be removed.(‡’Äı
+M
+java:S1135K"2Complete the task associated to this TODO comment.(¡Ãºşÿÿÿÿ
+W
+java:S1659["ADeclare "high" and all following declarations on a separate line.(‚Ïİë
+H
+java:S1135t"2Complete the task associated to this TODO comment.(Â‡Ø§
+I
+java:S1135“"2Complete the task associated to this TODO comment.(¡œç’
+H
+java:S1135ª"2Complete the task associated to this TODO comment.(’³Â\
+B
+java:S1905·"&Remove this unnecessary cast to "int".(Ôªæòÿÿÿÿÿ
+P
+java:S1135Ç"2Complete the task associated to this TODO comment.(ŠìÕ8Î¿Ô¨ç0
+^	java:S125Ò"<This block of commented-out lines of code should be removed.(äÏŞ‰ùÿÿÿÿ8»£Ø¨ç0
+^	java:S125á"<This block of commented-out lines of code should be removed.(–ç¤¾ûÿÿÿÿ8…¸×¨ç0
+9
+java:S3626—"Remove this redundant jump.(ÉŠ©ƒ8Ú¹Ÿ±é0
+P
+java:S1135ö"2Complete the task associated to this TODO comment.(ëÛÀ°8¹¡›±é0
+?
+java:S1659…"!Declare "end" on a separate line.(óšŸÕ8Ú¹Ÿ±é0
+P
+java:S1135 "2Complete the task associated to this TODO comment.(‡¯±¥8Ê¶Âùé0
+X	java:S125¸"<This block of commented-out lines of code should be removed.(ƒ^8š¿Äùé0

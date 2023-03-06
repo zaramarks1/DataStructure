@@ -285,9 +285,58 @@ public class SlidingWindow {
         return false;
     }
 
+    // TODO 485. Max Consecutive Ones EASY
+    // https://leetcode.com/problems/max-consecutive-ones/description/
+    // Runtime 1 ms Beats 100%
+    // Memory 44.3 MB Beats 23.27%
 
+    public int findMaxConsecutiveOnes(int[] nums) {
 
+        int tempCount = 0;
+        int maxCount = 0;
 
+        for(int i = 0; i < nums.length; i ++){
+
+            if(nums[i] == 1) tempCount++;
+            else {
+                maxCount = Math.max(tempCount, maxCount);
+                tempCount = 0;
+            }
+        }
+        // maxCount = Math.max(tempCount, maxCount);
+        return Math.max(tempCount, maxCount);
+    }
+
+    //  TODO 1004. Max Consecutive Ones III MEDIUM
+    // https://leetcode.com/problems/max-consecutive-ones-iii/description/
+    // Runtime 3 ms Beats 70.32%
+    // Memory 43.8 MB Beats 46.33%
+
+    public int longestOnes(int[] nums, int k) {
+
+        if(k == nums.length) return k;
+
+        int start = 0;
+        int end = 0;
+        int kCopy = k;
+
+        int total = 0;
+
+        while(end < nums.length){
+
+            if(nums[end] == 0){
+                kCopy--;
+                if(kCopy < 0){
+                    while(kCopy < 0 ){
+                        if(nums[start++] == 0) kCopy++;
+                    }
+                }
+            }
+            total = Math.max(total, end-start+1);
+            end++;
+        }
+        return total;
+    }
     public static void main(String args[]){
 
         //System.out.print(getMaxSum(new int[]{1,2,3,4,5,6,2}, 3));
