@@ -221,6 +221,62 @@ public class Exercises {
 
     }
 
+    // TODO 75. Sort Colors MEDIUM
+    // https://leetcode.com/problems/sort-colors/description
+    //Runtime 0 ms Beats 100%
+    // Memory 40.6 MB Beats
+
+    public void sortColors(int[] nums) {
+
+        if(nums.length == 1) return;
+
+        int red = 0;
+        int blue = nums.length -1;
+        int white = 0;
+
+        while(blue >= 0 && red < nums.length && blue > red){
+
+            int redPos = nums[red];
+            int bluePos = nums[blue];
+            if(redPos == 0) {
+                red++;
+                continue;
+            }
+
+            if(bluePos == 2) {
+                blue--;
+                continue;
+            }
+
+            if(redPos == 2){
+                nums[blue] = redPos;
+                nums[red] = bluePos;
+                blue--;
+                continue;
+            }
+
+            if(bluePos == 0){
+                nums[red] = 0;
+                nums[blue] = redPos;
+                red++;
+                continue;
+            }
+
+            white = red;
+            while(white < blue && nums[++white] == 1);
+
+            if(white >= blue) return;
+
+            if(nums[white] == 0) {
+                nums[red++] = 0;
+                nums[white] = 1;
+            }else{
+                nums[blue--] = 2;
+                nums[white] =1;
+            }
+        }
+    }
+
     public static void main(String args[]) {
 
     System.out.println(dailyTemperatures(new int []{73,74,75,71,69,72,76,73}));
