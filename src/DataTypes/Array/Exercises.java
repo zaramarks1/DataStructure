@@ -277,6 +277,33 @@ public class Exercises {
         }
     }
 
+    // TODO 238. Product of Array Except Self MEDIUM
+    // https://leetcode.com/problems/product-of-array-except-self/description/
+    //Runtime 1 ms Beats 100%
+    // Memory 50.4 MB Beats 72.2%
+
+    public int[] productExceptSelf(int[] nums) {
+
+        int numsL = nums.length;
+        int[] result = new int[numsL];
+
+        result[0] = 1;
+
+        for(int i = 1; i < numsL; i ++){
+            result[i] = result[i-1] * nums[i-1];
+        }
+
+        int reverse = nums[numsL-1];
+
+        for(int i = numsL - 2; i >= 0; i--){
+            result[i] *= reverse;
+            reverse*= nums[i];
+        }
+
+        return result;
+
+    }
+
     public static void main(String args[]) {
 
     System.out.println(dailyTemperatures(new int []{73,74,75,71,69,72,76,73}));
