@@ -31,8 +31,6 @@ S
 .src/DataTypes/StacksQueues/StackExercises.java,c/b/cb4901be2fd449245ccb272b2857094d85663f03
 Y
 )src/DataTypes/LinkedList/LinkedlList.java,6/3/6308b1b217b688daa0a9e0b9c6284fe0c922f6fc
-O
-src/DataTypes/Array/Greedy.java,c/8/c896669154da8badbd202064fa4ee9b7c7dfb595
 Q
 !src/DataTypes/BinaryTree/DFS.java,f/d/fd210620377515f3da770ac701e73c2d22f4fdeb
 S

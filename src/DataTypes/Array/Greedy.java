@@ -161,4 +161,100 @@ public class Greedy {
 
     }
 
+    // TODO 56. Merge Intervals MEDIUM
+    // https://leetcode.com/problems/merge-intervals/description/
+    // Runtime 8 ms Beats 81.85%
+    // Memory 47.6 MB Beats 32.4%
+
+    public int[][] merge(int[][] intervals) {
+
+        int counter = 1;
+
+        int pointer = 0;
+
+        Arrays.sort(intervals, (i1, i2) -> Integer.compare(i1[0], i2[0]));
+
+
+        for(int i = 1; i < intervals.length; i++){
+
+            if(intervals[pointer][1] < intervals[i][0]){
+                pointer = i;
+                counter++;
+                continue;
+            }
+
+            intervals[pointer][1] = Math.max(intervals[pointer][1], intervals[i][1]);
+            intervals[pointer][0] = Math.min(intervals[pointer][0],intervals[i][0]) ;
+
+            intervals[i][0] = -1;
+            intervals[i][1] = -1;
+        }
+
+        int[][] result = new int[counter][2];
+        int pos =0;
+
+        for(int i = 0; i < intervals.length;i++ ){
+            if(intervals[i][0] != -1 ) {
+                result[pos++] = intervals[i];
+            }
+        }
+        return result;
+    }
+
+    // TODO 435. Non-overlapping Intervals MEDIUM
+    //https://leetcode.com/problems/non-overlapping-intervals/description/
+    // Runtime 67 ms Beats 47.87%
+    // Memory 101.7 MB Beats 9.23%
+
+    public int eraseOverlapIntervals(int[][] intervals) {
+
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+
+        int max = intervals[0][1];
+        int counter =0;
+
+
+        for(int i = 1; i < intervals.length; i ++){
+
+            if(intervals[i][0] >= max){
+                max = Math.max(max, intervals[i][1]);
+            }else{
+                max = Math.min(max, intervals[i][1]);
+                counter++;
+            }
+        }
+        return counter;
+
+    }
+
+    // TODO 334. Increasing Triplet Subsequence MEDIUM
+    // https://leetcode.com/problems/increasing-triplet-subsequence/description/
+    // Runtime 3 ms Beats 41.60%
+    // Memory 93.2 MB Beats 71.90%
+
+    public boolean increasingTriplet(int[] nums) {
+
+        int counter = 0;
+
+        int min = nums[0];
+        int max = nums[0];
+
+        for(int i = 1; i < nums.length; i ++){
+            int curr = nums[i];
+
+            if(curr > max || curr > min && counter == 0){
+                counter++;
+                max = curr;
+                if(counter == 2) return true;
+                continue;
+            }
+            if(curr < min){
+                min = curr;
+            }else if (curr > min && counter == 1){
+                max = curr;
+            }
+        }
+        return counter == 2 ? true :false;
+    }
+
 }
