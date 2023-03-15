@@ -57,6 +57,44 @@ public class backtracking {
 
     }
 
+    // TODO 47. Permutations II MEDIUM
+    // https://leetcode.com/problems/permutations-ii/description/
+    // Runtime 2 ms Beats 79.15%
+    // Memory 43.2 MB Beats 38.63%
+
+    public List<List<Integer>> permuteUnique(int[] nums) {
+
+        Arrays.sort(nums);
+
+        List<List<Integer>>  result = new ArrayList<>();
+
+        backtrack(result, new ArrayList<>(), nums, new boolean[nums.length]);
+
+        return result;
+    }
+
+    public void backtrack(List<List<Integer>> res,List<Integer> temp, int[] nums, boolean[] visited){
+
+        if(temp.size() == nums.length){
+            res.add(new ArrayList<Integer>(temp));
+            return;
+        }
+
+        for(int i = 0; i < nums.length; i ++){
+            if(visited[i]) continue;
+
+            if(i > 0 && nums[i] == nums[i-1] && !visited[i-1])continue;
+
+            temp.add(nums[i]);
+            visited[i] = true;
+
+            backtrack(res, temp, nums, visited);
+
+            visited[i] = false;
+            temp.remove(temp.size()-1);
+        }
+    }
+
     // TODO 17. Letter Combinations of a Phone Number MEDIUM
     // https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
     // Runtime 0 ms Beats 100%

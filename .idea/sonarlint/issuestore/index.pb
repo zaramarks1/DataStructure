@@ -9,18 +9,12 @@ N
 src/SortingAlgo/MergeSort.java,5/a/5af481c08991a08b1bf63b1659aeaa8026c9a984
 Y
 )src/DataTypes/Array/string/Exercises.java,3/f/3fe2220204b8cea2bb173402e7c77269ae1cfdcf
-`
-0src/DataTypes/LinkedList/ExerciseLinkedList.java,b/e/be013668c68b554f398d4e42c9eac9f219abb8e2
-X
-(src/DataTypes/BinaryTree/Traversals.java,0/1/01e33a7cbc3d0c73d50e070d832ee561e8e58816
 S
 #src/DataTypes/Matrix/Exercises.java,0/1/01b8ad9d8ccfd6aa3cb017cc69e11e487aba9124
 ^
 .src/DataTypes/BinaryTree/BinarySearchTree.java,e/0/e0c40a7af7ae25621d798a0e8e45fd9ab11e2ccc
 V
 &src/DataTypes/BinaryTree/TreeNode.java,2/f/2f3fc0680ec5e3a7f6fdd9642ece635fa7b7b5a0
-Q
-!src/DataTypes/BinaryTree/BFS.java,f/e/fe2a72fd6fb4ed999eadc7ec40899fec9c8390fe
 T
 $src/DataTypes/Array/TwoPointers.java,8/b/8b085038265ab968a87f52f320faa3c13a262b8e
 X
@@ -29,9 +23,5 @@ S
 #src/DataTypes/String/Exercises.java,0/e/0e583e372b03ab5c5c66b3e6ed7283b388563a49
 ^
 .src/DataTypes/StacksQueues/StackExercises.java,c/b/cb4901be2fd449245ccb272b2857094d85663f03
-Y
-)src/DataTypes/LinkedList/LinkedlList.java,6/3/6308b1b217b688daa0a9e0b9c6284fe0c922f6fc
-Q
-!src/DataTypes/BinaryTree/DFS.java,f/d/fd210620377515f3da770ac701e73c2d22f4fdeb
 S
 #src/Recursion/DivideAndConquer.java,8/a/8abb00f071abb037a86d39c4ad07d39a9114e28a

@@ -1,13 +1,0 @@
-
-Q
-java:S3740%"/Provide the parametrized type for this generic.(§‡²ˆÿÿÿÿÿ8ƒ¿´õà0
-{
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ù€Ï°úÿÿÿÿ8Œ´õà0
-†
-java:S1319#"dThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".(¢ïŞáıÿÿÿÿ8‡¿´õà0
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(êÂ§î
-T
-java:S1135"2Complete the task associated to this TODO comment.(Ü›°úÿÿÿÿ8¾ºßõà0
-X	java:S125"<This block of commented-out lines of code should be removed.(×º¼å8µŒ´õà0
-T
-java:S1135Z"2Complete the task associated to this TODO comment.(ñšÌßüÿÿÿÿ8É¨“Úç0
