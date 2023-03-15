@@ -318,5 +318,50 @@ public class Exercises {
         return maxLength;
     }
 
+    // TODO 415. Add Strings EASY
+    // https://leetcode.com/problems/add-strings/description/
+    // Runtime 2 ms Beats 89.84%
+    // Memory 42.4 MB Beats 73.79%
+
+    public String addStrings(String num1, String num2) {
+
+        int index1 = num1.length()-1;
+        int index2 = num2.length()-1;
+
+        int sum = 0;
+        int res = 0;
+
+        StringBuilder result = new StringBuilder();
+
+        while(index1>=0 || index2>=0){
+
+            sum=0;
+
+            if(index1>=0) {
+                sum+= (num1.charAt(index1)-'0');
+                index1--;
+            }
+
+            if(index2>=0) {
+                sum+= (num2.charAt(index2)-'0');
+                index2--;
+            }
+            sum+=res;
+            res = 0;
+
+            if(sum > 9 ){
+                res=1;
+                sum -=10;
+            }
+
+            result.append(sum);
+        }
+
+        if(res==1) result.append("1");
+
+        return result.reverse().toString();
+
+    }
+
 
 }

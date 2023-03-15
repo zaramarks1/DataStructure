@@ -19,8 +19,6 @@ T
 $src/DataTypes/Array/TwoPointers.java,8/b/8b085038265ab968a87f52f320faa3c13a262b8e
 X
 (src/Recursion/ExercisesMemorization.java,0/f/0f1573a043021f77fd39b09e5f5387f7482851cc
-S
-#src/DataTypes/String/Exercises.java,0/e/0e583e372b03ab5c5c66b3e6ed7283b388563a49
 ^
 .src/DataTypes/StacksQueues/StackExercises.java,c/b/cb4901be2fd449245ccb272b2857094d85663f03
 S
