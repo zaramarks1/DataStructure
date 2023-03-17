@@ -165,5 +165,47 @@ public class DFS {
 
     }
 
+    // TODO 113. Path Sum II MEDIUM
+    // https://leetcode.com/problems/path-sum-ii/description/
+    // Runtime 1 ms Beats
+    // 100% Memory 42.6 MB Beats 70.4%
+
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+
+        if(root == null) return new ArrayList<>();
+
+        List<List<Integer>> res = new ArrayList<>();
+
+        backtrack(res, new ArrayList<>(), targetSum, root);
+
+        return res;
+
+
+    }
+
+    public void backtrack(List<List<Integer>> res, List<Integer> temp, int targetSum, TreeNode root ){
+
+        if(root == null) return;
+
+        temp.add(root.val);
+        //currSum+=root.val;
+
+        if(root.left == null && root.right == null && root.val == targetSum){
+
+            res.add(new ArrayList<>(temp));
+            temp.remove(temp.size()-1);
+            return;
+        }
+
+        backtrack(res, temp, targetSum-root.val, root.left);
+
+        backtrack(res, temp, targetSum-root.val, root.right);
+
+        temp.remove(temp.size()-1);
+
+        return;
+
+    }
+
 
 }
