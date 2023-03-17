@@ -362,6 +362,43 @@ public class Exercises {
         return result.reverse().toString();
 
     }
+    // TODO 763. Partition Labels MEDIUM
+    // https://leetcode.com/problems/partition-labels/description/
+    //Runtime 4 ms Beats 77.78%
+    // Memory 41.4 MB Beats 59.63%
+    public List<Integer> partitionLabels(String s) {
+
+        int[] alphabet = new int[26];
+
+        for(int i = 0; i < s.length(); i ++){
+            alphabet[s.charAt(i)-'a'] = i;
+        }
+
+        int low = 0;
+        int high = 0;
+
+        List<Integer> partitions = new ArrayList<>();
+
+        while(high < s.length()){
+
+            high = alphabet[s.charAt(low) - 'a'];
+            int index = low;
+
+            while(high < s.length() && high > index){
+                index++;
+                int highTemp = alphabet[s.charAt(index) - 'a'];
+
+                high = Math.max(high, highTemp);
+            }
+
+            partitions.add(high - low + 1);
+
+            high++;
+            low = high;
+        }
+        return partitions;
+
+    }
 
 
 }

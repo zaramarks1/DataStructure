@@ -1,6 +1,9 @@
 package DataTypes.BinaryTree;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DFS {
 
@@ -125,6 +128,41 @@ public class DFS {
         // boolean right = checkPath(root.right, value, targetSum);
 
         return  checkPath(root.left, value, targetSum) || checkPath(root.right, value, targetSum);
+    }
+
+
+    // TODO 22. Generate Parentheses MEDIUM
+    // https://leetcode.com/problems/generate-parentheses/description/
+    // Runtime 1 ms Beats 92.5%
+    // Memory 42.5 MB Beats 44.4%
+
+    public List<String> generateParenthesis(int n) {
+
+        if(n == 1 ) return Arrays.asList("()");
+
+        List<String> res = new ArrayList<>();
+
+        dfs(res, "", 0, 0, n);
+
+        return res;
+
+    }
+
+    public void dfs(List<String> res, String temp, int left, int right, int n){
+
+        if(temp.length() == n*2){
+            res.add(temp);
+            return;
+        }
+
+        if(left < n){
+            dfs(res, temp + "(", left+1, right, n);
+        }
+
+        if(right < left){
+            dfs(res, temp+")", left, right+1, n);
+        }
+
     }
 
 
