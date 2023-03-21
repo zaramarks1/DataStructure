@@ -167,4 +167,42 @@ public class backtracking {
             temp.remove(temp.size() -1);
         }
     }
+
+    // TODO 1947. Maximum Compatibility Score Sum MEDIUM
+    // https://leetcode.com/problems/maximum-compatibility-score-sum/description/
+    // Runtime 39 ms Beats 72.73%
+    // Memory 40.5 MB Beats 42.25%
+
+    public int maxCompatibilitySum(int[][] students, int[][] mentors) {
+        return backtrack(students, mentors, 0, new boolean[students.length]);
+    }
+
+    public int backtrack(int[][] students, int[][] mentors, int index, boolean[] visited){
+
+        if(index == students.length) return 0;
+
+        int maxScore = 0;
+
+        for(int i = 0; i < students.length; i++){
+
+            if(visited[i]) continue;
+
+            visited[i] = true;
+
+            int score = calcScore(students[index], mentors[i]) + backtrack(students, mentors, index+1, visited);
+            visited[i] = false;
+            maxScore = Math.max(maxScore, score);
+        }
+
+        return maxScore;
+    }
+
+    public int calcScore(int[] student, int[] mentor){
+        int score = 0;
+        for(int i = 0; i < student.length; i ++){
+            score+= student[i] == mentor[i] ? 1 : 0;
+        }
+
+        return score;
+    }
 }

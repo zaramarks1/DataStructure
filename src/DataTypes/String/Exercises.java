@@ -400,5 +400,23 @@ public class Exercises {
 
     }
 
+    // TODO 14. Longest Common Prefix EASY
+    // https://leetcode.com/problems/longest-common-prefix/description/
+    // Runtime 0 ms Beats 100%
+    // Memory 40.7 MB Beats 47.51%
+
+    public String longestCommonPrefix(String[] strs) {
+
+        String prefix = strs[0];
+
+        for(int i = 1; i < strs.length; i ++ ){
+            while(prefix.length() > 0 && strs[i].indexOf(prefix)!= 0){
+                prefix = prefix.substring(0, prefix.length()-1);
+            }
+            if(prefix.length() == 0) return "";
+        }
+        return prefix;
+    }
+
 
 }
