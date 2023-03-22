@@ -142,4 +142,27 @@ public class BinarySearchTree {
 
         return root;
     }
+
+    // TODO 108. Convert Sorted Array to Binary Search Tree EASY
+    // https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
+    // Runtime 0 ms Beats 100%
+    // Memory 42.2 MB Beats 68.77%
+
+    public TreeNode sortedArrayToBST(int[] nums) {
+        return divideAndConquer(nums, 0, nums.length-1);
+    }
+
+    public TreeNode divideAndConquer(int[]nums, int low, int high){
+
+        if(low > high ) return null;
+
+        int mid =  low + (high - low) / 2;
+
+        TreeNode middle = new TreeNode(nums[mid]);
+
+        middle.left = divideAndConquer(nums, low, mid-1);
+        middle.right = divideAndConquer(nums, mid+1, high);
+
+        return middle;
+    }
 }

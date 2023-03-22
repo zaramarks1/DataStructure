@@ -11,8 +11,6 @@ Y
 )src/DataTypes/Array/string/Exercises.java,3/f/3fe2220204b8cea2bb173402e7c77269ae1cfdcf
 S
 #src/DataTypes/Matrix/Exercises.java,0/1/01b8ad9d8ccfd6aa3cb017cc69e11e487aba9124
-^
-.src/DataTypes/BinaryTree/BinarySearchTree.java,e/0/e0c40a7af7ae25621d798a0e8e45fd9ab11e2ccc
 V
 &src/DataTypes/BinaryTree/TreeNode.java,2/f/2f3fc0680ec5e3a7f6fdd9642ece635fa7b7b5a0
 T

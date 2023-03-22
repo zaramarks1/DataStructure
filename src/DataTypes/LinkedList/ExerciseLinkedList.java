@@ -338,6 +338,97 @@ public class ExerciseLinkedList {
             return head;
         }
 
+        // DELETE CURRENT NODE
+        public void deleteNode(ListNode node) {
+
+            while(node.next.next!=null){
+                int val = node.next.val;
+                node.val = val;
+                node = node.next;
+            }
+            node.val = node.next.val;
+            node.next = null;
+
+        }
+        // TODO 19. Remove Nth Node From End of List MEDIUM
+        // https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+        // Runtime 0 ms Beats 100%
+        // Memory 40.8 MB Beats 39.51%
+
+        public ListNode removeNthFromEnd(ListNode head, int n) {
+            ListNode curr = head;
+            ListNode nPlace = head;
+
+            int trackN = 0;
+
+            while(curr!=null){
+                curr = curr.next;
+                trackN++;
+                if(trackN >= n+2){
+                    nPlace = nPlace.next;
+                }
+            }
+            if(nPlace.next == null ) return null;
+
+            if (trackN < n+1) {
+                head = head.next;
+            }
+            else {
+                nPlace.next = nPlace.next.next;
+            }
+            return head;
+        }
+
+        public ListNode removeNthFromEnd2(ListNode head, int n) {
+
+            ListNode start = new ListNode(0);
+            start.next = head;
+            ListNode slow = start, fast = start;
+
+            //Move fast in front so that the gap between slow and fast becomes n
+            for(int i=1; i<=n+1; i++)   {
+                fast = fast.next;
+            }
+            //Move fast to the end, maintaining the gap
+            while(fast != null) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+            //Skip the desired node
+            slow.next = slow.next.next;
+            return start.next;
+        }
+
+        // TODO 234. Palindrome Linked List EASY
+        // https://leetcode.com/problems/palindrome-linked-list/description/
+        public boolean isPalindrome(ListNode head) {
+
+            ListNode normal = new ListNode();
+            ListNode currNormal = normal;
+
+            ListNode prev = null;
+            ListNode curr = head;
+            ListNode next = null;
+
+            while(curr!=null){
+                currNormal.next = new ListNode(curr.val);
+                currNormal = currNormal.next;
+
+                next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+            }
+            normal = normal.next;
+            while(prev!= null && normal!=null){
+
+                if(prev.val != normal.val) return false;
+                prev = prev.next;
+                normal = normal.next;
+            }
+            return true;
+        }
+
         public static void main(String[] args) {
 
         }
